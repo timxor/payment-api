@@ -1,0 +1,12 @@
+[package]
+name = "payment_api"
+version = "0.1.0"
+authors = ["Tim Siwula <tcsiwula@gmail.com>"]
+
+[dependencies]
+rocket = "0.3.14"
+rocket_codegen = "0.3.14"
+dotenv = "0.9.0"
+# DB
+diesel = { version = "1.0.0", features = ["postgres"] }
+diesel_codegen = { version = "0.16", features = ["postgres"] }

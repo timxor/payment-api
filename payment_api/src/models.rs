@@ -1,3 +1,5 @@
+use schema::transfers;
+
 #[derive(Queryable)]
 pub struct Transfer {
     pub id: i32,
@@ -9,3 +11,13 @@ pub struct Transfer {
     pub complete: bool,
 }
 
+#[derive(Insertable)]
+#[table_name = "transfers"]
+pub struct NewTransfer<'a> {
+    pub amount: &'a str,
+    pub currency: &'a str,
+    pub to_name: &'a str,
+    pub to_number: &'a str,
+    pub to_email: &'a str,
+    pub complete: &'a bool,
+}

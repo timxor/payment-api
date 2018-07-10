@@ -1,3 +1,9 @@
+# rust shit
+target/
+Cargo.lock
+migrations/
+target/
+
 # Build and Release Folders
 bin-debug/
 bin-release/
@@ -6,6 +12,7 @@ bin-release/
 
 # Other files and folders
 .settings/
+.env
 
 # Executables
 *.swf

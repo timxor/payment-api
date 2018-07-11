@@ -10,6 +10,7 @@ use diesel::pg::PgConnection;
 use dotenv::dotenv;
 use std::env;
 
+#[macro_use] extern crate serde_derive;
 use self::models::{NewTransfer, Transfer};
 
 pub fn establish_connection() -> PgConnection {

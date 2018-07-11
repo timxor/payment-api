@@ -16,12 +16,17 @@ payment-api/payment-api/.env should have something like this:
 DATABASE_URL=postgres://infomarket:password@localhost/infomarket
 ```
 
-##test it is running:
+## test it is running:
 ```
 psql postgres://infomarket:password@localhost:5432
 ```
 
-# cli // soon to be api
+# start the api server
+``` 
+cargo build && cargo run --bin payment_api
+```
+
+# cli 
 ## create a transfer
 ```
 cargo run --bin create_transfer

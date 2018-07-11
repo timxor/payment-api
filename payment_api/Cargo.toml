@@ -7,6 +7,15 @@ authors = ["Tim Siwula <tcsiwula@gmail.com>"]
 rocket = "0.3.14"
 rocket_codegen = "0.3.14"
 dotenv = "0.9.0"
-# DB
 diesel = { version = "1.0.0", features = ["postgres"] }
-diesel_codegen = { version = "0.16", features = ["postgres"] }
+diesel_codegen = { version = "*", features = ["postgres"] }
+r2d2 = "*"
+r2d2-diesel = "*"
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
+
+[dependencies.rocket_contrib]
+version = "*"
+default-features = false
+features = ["json"]

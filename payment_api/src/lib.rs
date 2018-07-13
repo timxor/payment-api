@@ -42,3 +42,6 @@ pub fn create_post(conn: &PgConnection, amount: &str, currency: &str, to_name: &
         .get_result(conn)
         .expect("Error saving new post")
 }
+
+// todo add create_user function
+pub fun 

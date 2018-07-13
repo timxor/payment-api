@@ -4,9 +4,9 @@ use rocket::request::{self, FromRequest};
 use rocket::{Request, State, Outcome};
 
 use r2d2;
-use r2d2_diesel::PostgresConnectionManager;
+use diesel::PgConnection;
+use r2d2_diesel::ConnectionManager;
 
-use diesel::postgres::PgConnection;
 
 pub type Pool = r2d2::Pool<ConnectionManager<PgConnection>>;
 static DATABASE_URL: &'static str = env!("DATABASE_URL");

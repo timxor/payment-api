@@ -7,6 +7,13 @@ use rocket_contrib::{Json, Value};
 #[macro_use] extern crate serde_derive;
 #[cfg(test)] mod tests;
 
+
+
+#[macro_use] extern crate diesel;
+extern crate r2d2;
+extern crate r2d2_diesel;
+mod db;
+mod schema;
 mod user;
 use user::{User};
 
@@ -37,6 +44,7 @@ fn main() {
     rocket::ignite()
         .mount("/user", routes![create, update, delete])
         .mount("/users", routes![read])
+        .manage(db::connect())
         .launch();
 }
 

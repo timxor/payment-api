@@ -12,7 +12,7 @@ table! {
 
 table! {
     users (id) {
-        id -> Int4,
+        id -> Nullable<Int4>,
         name -> Varchar,
         identity -> Varchar,
         hometown -> Varchar,

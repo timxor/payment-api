@@ -18,7 +18,6 @@ class Transaction {
     this.phone = document.getElementById('number').value;
     this.email = document.getElementById('email').value;
     this.checkForErrors(this.amount, this.token, this.name, this.phone, this.email);
-    console.log('take tx');
   }
 
   checkForErrors(amount, token, name, number, email){
@@ -43,12 +42,12 @@ class Transaction {
   }
 
   doTx(amount, token, name, number, email){
-    const results = document.getElementById('results');
     const pmtAmt = document.getElementById('pmt-amt');
     pmtAmt.value = `${amount} ${token} sent`
     const recipient = document.getElementById('recipient');
     recipient.value = `${name} ${number} ${email}`;
-    ui.displayLoader(function(){results.style.display = 'inline'});
+    ui.displayLoader(),
     setTimeout(ui.throwAlert('Payment cleared yo!', 'success'),1000); // write as a callback
+
   }
 }

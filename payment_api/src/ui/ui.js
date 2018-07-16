@@ -20,7 +20,6 @@ class UI {
     ddText.firstChild.nodeValue = e.target.id;
     this.activeToken = ddText.firstChild.nodeValue
     e.preventDefault();
-    console.log(this.activeToken);
     return this.activeToken;
   }
 
@@ -43,11 +42,14 @@ class UI {
 
   }
 
-  displayLoader(cb){
+  displayLoader(){
     const loader = document.getElementById('loading');
     loader.style.display = 'inline';
-    setTimeout(function(){loader.remove()},1000);
-    setTimeout(cb,1000);
+    setTimeout(function(){
+      loader.remove();
+      transferForm.remove();
+      results.style.display = 'inline';
+      },1000);
   }
 
 }

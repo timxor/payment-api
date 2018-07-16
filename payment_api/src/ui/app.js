@@ -11,13 +11,15 @@ const transferForm = document.querySelector('input.btn.btn-danger.btn-block')
 const dd = document.querySelector('div.dropdown-menu')
 const tokens = ['ETH', 'OMG', 'DAI'];
 const ui = new UI;
+const results = document.getElementById('results');
+const restartBtn = document.getElementById('restart');
 
 ui.insertTokens(ui.tokens);
 let activeToken = '';
 
 dd.addEventListener('click',selectToken);
-
 transferForm.addEventListener('click',handleTx);
+restartBtn.addEventListener('click',restart);
 
 /* HANDLE EVENTS */
 function handleTx(e){
@@ -30,4 +32,9 @@ function handleTx(e){
 function selectToken(e){
   ui.selectToken(e);
   e.preventDefault();
+}
+
+function restart(){
+  console.log('restarting');
+  location.reload();
 }

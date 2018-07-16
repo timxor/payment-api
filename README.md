@@ -23,7 +23,9 @@ psql postgres://infomarket:password@localhost:5432
 
 # start the api server
 ``` 
-cargo build && cargo run --bin payment_api
+export DATABASE_URL=postgres://macdev:timistheshit@localhost/paymentapi
+cargo build
+cargo run --bin payment_api
 ```
 
 # cli 
@@ -42,4 +44,29 @@ cargo run --bin show_transfers
 # repo url
 ```
 https://github.com/tcsiwula/payment-api 
+```
+
+
+# updating the db
+First drop the table:
+```
+psql postgres://macdev:timistheshit@localhost/paymentapi
+select * from users;
+drop table users;
+select * from users;
+```
+
+Then create a new up.sql:
+```
+diesel migration generate newSqlThingy
+```
+
+Then edit the schema in up.sql and run it:
+```
+diesel migration run
+```
+
+The new table should be here now:
+```
+select * from users;
 ```

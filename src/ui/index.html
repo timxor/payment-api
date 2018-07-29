@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Send crypto to friends</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <style>
+    #loading{
+      display: none;
+    }
+    </style>
+  </head>
+  <body class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card card-body text-center mt-5">
+            <h1 class="heading display-5 pb-3">Crypto With Friends</h1>
+            <form id="loan-form">
+              <div class="form-group">
+              <div class="input-group">
+                <input type="number" min="0.001" step="0.001" class="form-control" id = 'amount2' aria-label="Text input with dropdown button" placeholder="Amount of currency">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select token</button>
+                  <div class="dropdown-menu">
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Name</span>
+                  <input type="text" class="form-control" id="name" placeholder="John Doe">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Phone</span>
+                  <input type="text" class="form-control" id="number" data-format="+1 (ddd) ddd-dddd" data-number="15555555555" placeholder="+1-111-221-4252">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">E-mail</span>
+                  <input type="text" class="form-control" id="email" placeholder="john.doe@gmail.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Send crypto" class="btn btn-danger btn-block">
+              </div>
+            </form>
+            <!-- LOADER -->
+            <div id="response">
+            <div id="loading">
+              <img src="img/loading.gif" alt="">
+            </div>
+            <!-- RESULTS -->
+            <div id="results" class="pt-4" style="display:none">
+              <h5>Money Sent!</h5>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Amount sent</span>
+                  <input type="text" class="form-control" id="pmt-amt" disabled>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Recipient</span>
+                  <input type="text" class="form-control" id="recipient" disabled>
+                </div>
+              </div>
+              <button type='button' class='btn btn-danger' id='restart'>New transaction?</button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="ui.js"></script>
+    <script src="tx.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

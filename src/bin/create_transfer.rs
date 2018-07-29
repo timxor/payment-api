@@ -39,9 +39,9 @@ fn main() {
     let email = email.trim_right(); // Remove the trailing newline
 
     
-    let transfer = create_transfer(&connection, amount, &currency, name, number, email, complete);
+//    let transfer = create_transfer(&connection, amount, &currency, name, number, email, complete);
     println!("\n~~~~ Sent transfer ~~~~~");
     println!("Amount: {} {}", amount, currency);
     println!("recipient: {}, {}, {}", name, number, email);
-    println!("transaction id: {}\n", transfer.id);
+   // println!("transaction id: {}\n", transfer.id);
 }

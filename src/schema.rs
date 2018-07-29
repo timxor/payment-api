@@ -12,11 +12,14 @@ table! {
 
 table! {
     users (id) {
-        id -> Nullable<Int4>,
-        name -> Varchar,
-        identity -> Varchar,
-        hometown -> Varchar,
-        age -> Int4,
+        id -> Int4,
+        first_name -> Varchar,
+        last_name -> Varchar,
+        user_name -> Varchar,
+        email -> Varchar,
+        public_key -> Varchar,
+        private_key -> Varchar,
+        eth_address -> Varchar,
     }
 }
 

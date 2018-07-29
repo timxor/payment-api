@@ -1,8 +1,8 @@
 # rust shit
 target/
 Cargo.lock
-migrations/
 target/
+.DS_Store
 
 # Build and Release Folders
 bin-debug/

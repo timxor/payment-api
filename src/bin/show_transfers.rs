@@ -18,7 +18,7 @@ fn main() {
     println!("Displaying {} transfers", results.len());
     let mut index = 1;
     for transfer in results {
-        
+
         println!("\n++++++ transfer id: {} +++++ transfer complete: {} +++++", index, transfer
             .complete);
         index = index + 1;
@@ -26,7 +26,7 @@ fn main() {
         println!("---------------------------------");
         println!("amount: {} {}", transfer.amount, transfer.currency);
         println!("---------------------------------");
-        
+
         println!("recipient: {}, {}, {},", transfer.to_name, transfer.to_number, transfer.to_email);
         println!("---------------------------------");
     }

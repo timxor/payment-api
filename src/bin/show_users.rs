@@ -9,14 +9,17 @@ fn main() {
     use payment_api::schema::users::dsl::*;
 
     let connection = establish_connection();
+    println!("-----------------------------------------------------------------------------------");
+    println!("  [first_name], [last_name], [username], [email], [eth_address]");
+    println!("-----------------------------------------------------------------------------------");
+
     let results = users
-        .limit(5)
+        .limit(20)
         .load::<User>(&connection)
-        .expect("Error loading posts");
-    
-    println!("Displaying {} users", results.len());
+        .expect("Error loading users");
+
     for user in results {
-        println!("{}, {}", user.first_name, user.last_name);
-        println!("----------\n");
+        println!("  {}, {}, {}, {}, {}", user.first_name, user.last_name, user.user_name, user.email, user.eth_address);
+        println!("-----------------------------------------------------------------------------------");
     }
 }

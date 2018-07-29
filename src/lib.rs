@@ -43,6 +43,6 @@ pub fn create_user<'a>(conn: &PgConnection, first_name: &'a str, last_name: &'a 
     diesel::insert_into(users::table)
         .values(&new_user)
         .get_result(conn)
-        .expect("Error saving new post")
+        .expect("Error saving new user")
     
 }

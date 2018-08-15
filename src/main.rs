@@ -1,7 +1,29 @@
-//#![feature(plugin)]
-//#![plugin(rocket_codegen)]
-//
-//extern crate rocket;
+#![feature(plugin)]
+#![plugin(rocket_codegen)]
+
+extern crate rocket;
+
+
+
+#[get("/")]
+fn hello() -> &'static str {
+    "Hello, world!"
+}
+
+fn main() {
+    rocket::ignite().mount("/", routes![hello]).launch();
+}
+
+
+
+
+
+
+
+
+
+
+
 //extern crate dotenv;
 //#[macro_use] extern crate rocket_contrib;
 //#[macro_use] extern crate diesel;

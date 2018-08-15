@@ -25,6 +25,7 @@ fn create_new_user(api: bool) {
         println!("create_new_user *** cli access");
         
         let mut first_name = String::new();
+        println!("-----------------------------------------------------------------------------------");
         println!("What would you like your first_name to be?");
         stdin().read_line(&mut first_name).unwrap();
         let first_name = first_name.trim_right();
@@ -60,7 +61,11 @@ fn create_new_user(api: bool) {
         eth_address.push_str(borrowed_string);
         
         let user = create_user(&connection, &first_name, &last_name, &user_name, &email, &public_key, &private_key, &eth_address);
-        println!("\n Created user {}, {}", first_name, eth_address);
+
+        println!("-----------------------------------------------------------------------------------");
+        println!("  [first_name], [last_name], [username], [email], [eth_address]");
+        println!("-----------------------------------------------------------------------------------");
+        println!("Created user: {}, {}, {}, {}, {}", user.first_name, user.last_name, user.user_name, user.email, user.eth_address);
     }
 }
 

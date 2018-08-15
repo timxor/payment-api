@@ -17,14 +17,12 @@ use diesel::pg::Pg;
 
 pub fn establish_connection() -> PgConnection {
     dotenv().ok();
-
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
     PgConnection::establish(&database_url).expect(&format!("Error connecting to {}", database_url))
 }
 
 // http://diesel.rs/guides/getting-started/
 // https://github.com/diesel-rs/diesel/blob/v1.3.0/examples/postgres/getting_started_step_3/src/lib.rs
-
 pub fn create_user<'a>(conn: &PgConnection, first_name: &'a str, last_name: &'a str,
                     user_name: &'a str, email: &'a str, public_key: &'a str,
                     private_key: &'a str, eth_address: &'a str) -> User  {

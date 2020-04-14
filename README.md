@@ -5,6 +5,9 @@ payment api for sending crypto to friends using their phone number or email
 
 ## install depencies
 ```
+
+
+
 rustup update stable
 cargo build
 ```
@@ -23,12 +26,12 @@ psql postgres://infomarket:password@localhost:5432
 ```
 
 # start the api server
-``` 
+```
 export DATABASE_URL=postgres://macdev:timistheshit@localhost/paymentapi
 cargo run --bin payment_api
 ```
 
-# cli 
+# cli
 ## create a transfer
 ```
 cargo run --bin create_transfer
@@ -43,7 +46,7 @@ cargo run --bin show_transfers
 
 # repo url
 ```
-https://github.com/tcsiwula/payment-api 
+https://github.com/tcsiwula/payment-api
 ```
 
 
@@ -88,4 +91,3 @@ example payload:
 	"email": "frank@aol.com"
 }
 ```
-

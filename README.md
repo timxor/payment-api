@@ -1,16 +1,29 @@
 # payment-api
 payment api for sending crypto to friends using their phone number or email
 
-# mac development
+
+## download and install dependencies
+
+``
+git clone https://github.com/timxor/payment-api.git
+cd payment-api
+cd parity
+git submodule init
+git submodule update
+
+rustup toolchain install nightly-2018-12-27
+cargo +nightly-2018-12-27 build
+
+cargo build
+
+
+
+
+```
 
 ## install depencies
-```
 
 
-
-rustup update stable
-cargo build
-```
 start Postgres app, version 10.
 use pgadmin4.
 
@@ -91,3 +104,8 @@ example payload:
 	"email": "frank@aol.com"
 }
 ```
+
+## dependencies
+
+Parity
+https://wiki.parity.io/Setup
